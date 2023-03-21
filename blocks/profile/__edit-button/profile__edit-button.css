@@ -5,6 +5,11 @@
     align-self: center;
 }
 
+.profile__edit-button:hover{
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
 @media screen and (max-width: 500px){
     .profile__edit-button{
         max-width: 20px;
