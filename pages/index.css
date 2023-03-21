@@ -28,5 +28,13 @@
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__add-button/_plus/profile__add-button_plus.css);
 
+/*gallery*/
+@import url(../blocks/gallery/gallery.css);
+@import url(../blocks/gallery/__card/gallery__card.css);
+@import url(../blocks/gallery/__card/_image/gallery__card_image.css);
+@import url(../blocks/gallery/__card/_title/gallery__card_title.css);
+@import url(../blocks/gallery/__card/_like-button/gallery__card_like-button.css);
+@import url(../blocks/gallery/__card/_caption/gallery__card_caption.css);
+
 /*footer*/
 @import url(../blocks/footer/footer.css);
