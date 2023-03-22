@@ -1,10 +1,11 @@
-.gallery__card_like-button{
+.gallery__card-like{
 width: 22px;
 height: 19px;
 padding-top: 5px;
 }
 
-.gallery__card_like-button:hover{
+.gallery__card-like:hover{
     opacity: 0.5;
     transition: 0.5s;
+    cursor: pointer;
 }

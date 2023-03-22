@@ -2,6 +2,7 @@
     width: 150px;
     height: 50px;
     border: 2px #fff solid;
+    border-radius: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +11,7 @@
 .profile__add-button:hover{
     opacity: 0.6;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 950px){

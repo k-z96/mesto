@@ -1,19 +1,19 @@
-.profile__add-button_plus{
+.profile__add-button-plus{
     color: #fff;
     width: 22px;
     height: 22px;
     margin: 0;
 }
 
-.profile__add-button_plus:hover{
+.profile__add-button-plus:hover{
     opacity: 0.6;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 320px) {
-    .profile__add-button_plus{
+    .profile__add-button-plus{
         width: 16px;
         height: 16px;
     }
-    
 }

@@ -22,20 +22,30 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__info/profile__info.css);
-@import url(../blocks/profile/__info/_name/profile__info_name.css);
-@import url(../blocks/profile/__info/_occupation/profile__info_occupation.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/profile/__occupation/profile__occupation.css);
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
-@import url(../blocks/profile/__add-button/_plus/profile__add-button_plus.css);
+@import url(../blocks/profile/__add-button-plus/profile__add-button-plus.css);
 
 /*gallery*/
 @import url(../blocks/gallery/gallery.css);
 @import url(../blocks/gallery/__card/gallery__card.css);
-@import url(../blocks/gallery/__card/_image/gallery__card_image.css);
-@import url(../blocks/gallery/__card/_title/gallery__card_title.css);
-@import url(../blocks/gallery/__card/_like-button/gallery__card_like-button.css);
-@import url(../blocks/gallery/__card/_caption/gallery__card_caption.css);
+@import url(../blocks/gallery/__card-image/gallery__card-image.css);
+@import url(../blocks/gallery/__card-title/gallery__card-title.css);
+@import url(../blocks/gallery/__card-like/gallery__card-like.css);
+@import url(../blocks/gallery/__card-caption/gallery__card-caption.css);
 
 /*footer*/
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+
+/*popup*/
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__close-icon/popup__close-icon.css);
+@import url(../blocks/popup/__form-title/popup__form-title.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__form-input/popup__form-input.css);
+@import url(../blocks/popup/__form-submit/popup__form-submit.css);
+@import url(../blocks/popup/__form-submit-text/popup__form-submit-text.css);
