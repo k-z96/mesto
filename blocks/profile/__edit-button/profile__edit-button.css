@@ -16,7 +16,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 500px){
+/*@media screen and (max-width: 500px){
     .profile__edit-button{
         max-width: 20px;
         min-height: 20px;
@@ -28,4 +28,4 @@
         max-width: 18px;
         min-height: 18px;
     }
-}
+}*/
