@@ -1,11 +1,14 @@
 .profile__add-button{
     width: 150px;
     height: 50px;
-    border: 2px #fff solid;
-    border-radius: 2px;
+   /* border: 2px #fff solid;
+    border-radius: 2px;*/
+    background-image: url(../../../images/Add_Button.png);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+    border-style: none;
 }
 
 .profile__add-button:hover{
