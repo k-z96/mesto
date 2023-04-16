@@ -1,4 +1,4 @@
-.gallery{
+.gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -8,21 +8,21 @@
 }
 
 @media screen and (max-width: 910px) {
-    .gallery{
+    .gallery {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-    }   
+    }
 }
 
-@media  screen and (max-width: 640px) {
-    .gallery{
+@media screen and (max-width: 640px) {
+    .gallery {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 }
 
-@media screen and (max-width: 320px){
-    .gallery{
+@media screen and (max-width: 320px) {
+    .gallery {
         padding-top: 36px;
     }
 }

@@ -1,4 +1,4 @@
-.profile__edit-button{
+.profile__edit-button {
     color: #fff;
     width: 24px;
     height: 24px;
@@ -10,7 +10,7 @@
 
 }
 
-.profile__edit-button:hover{
+.profile__edit-button:hover {
     opacity: 0.6;
     transition: 0.5s;
     cursor: pointer;

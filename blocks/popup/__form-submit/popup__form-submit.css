@@ -2,16 +2,18 @@
     height: 50px;
     background-color: #000;
     color: white;
+    background-image: url(../../../images/Submit_Button.png);
+    background-repeat: no-repeat;
     border: none;
-    /*padding: 18px 0 37px 0;*/
-    margin-top: 18px;
+    /*padding: 18px 0 37px 0;
+    margin-top: 18px;*/
     border-radius: 2px;
-    text-align: center;
+    /*text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.2;*/
 }
 
 .popup__form-submit:hover {
@@ -20,10 +22,11 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 550px){
-    .popup__form-submit{
+@media screen and (max-width: 550px) {
+    .popup__form-submit {
         height: 46px;
         font-size: 14px;
+        background-image: url(../../../images/Submit_Button_small.png);
         /*padding: 29px 0 39px 0;*/
     }
 }

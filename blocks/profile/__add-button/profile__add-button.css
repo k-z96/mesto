@@ -1,7 +1,7 @@
-.profile__add-button{
+.profile__add-button {
     width: 150px;
     height: 50px;
-   /* border: 2px #fff solid;
+    /* border: 2px #fff solid;
     border-radius: 2px;*/
     background-image: url(../../../images/Add_Button.png);
     display: flex;
@@ -12,16 +12,16 @@
     background-repeat: no-repeat;
 }
 
-.profile__add-button:hover{
+.profile__add-button:hover {
     opacity: 0.6;
     transition: 0.5s;
     cursor: pointer;
 }
 
-@media screen and (max-width: 950px){
-    .profile__add-button{
+@media screen and (max-width: 950px) {
+    .profile__add-button {
         width: 282px;
-        background-image: url(../../../images//Add-Button-wide.png);
+        background-image: url(../../../images/Add_Button_wide.png);
     }
 }
 
