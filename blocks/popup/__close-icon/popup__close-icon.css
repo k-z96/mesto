@@ -4,7 +4,7 @@
     position: absolute;
     left: calc(((100% - 430px) / 2) + 438px);
     top: 155px;
-    background-image: url('../../../images/Close_Icon.png'); 
+    background-image: url('../../../images/Close_Icon.png');
     background-repeat: no-repeat;
     background-position: center;
     background-color: black;
