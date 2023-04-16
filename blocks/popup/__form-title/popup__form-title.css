@@ -6,7 +6,7 @@
     padding-bottom: 54px;
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 550px){
     .popup__form-title{
         font-size: 18px;
         padding-bottom: 75px;
