@@ -17,7 +17,7 @@
 @media screen and (max-width: 640px) {
     .gallery {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 361px);;
+        grid-template-rows: repeat(6, 361px);
     }
 }
 
