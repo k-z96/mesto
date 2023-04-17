@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-</html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,21 +14,18 @@
 <body class="root">
     <div class="page">
         <header class="header">
-            <div class="header__logo">
-                <img src="./images/logo.svg" alt="лого место">
-            </div>
-            <div class="header__line"></div>
+            <img class="header__logo" src="./images/logo.svg" alt="лого место">
         </header>
 
         <main class="main">
             <section class="profile">
-                <img class="profile__avatar" src="./images/image-man.jpg" alt="Жак-Ив Кусто">
+                <img class="profile__avatar" src="./images/image-man.jpg" alt="Аватар пользователя">
                 <div class="profile__info">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button class="profile__edit-button"></button>
+                    <button class="profile__edit-button" type="button" aria-label="изменить профиль"></button>
                     <p class="profile__occupation">Исследователь океана</p>
                 </div>
-                <button class="profile__add-button"></button>
+                <button class="profile__add-button" type="button" aria-label="добавить"></button>
             </section>
 
             <section class="gallery">
@@ -38,7 +33,7 @@
                     <img class="gallery__card-image" src="./images/Ai-petri.jpg" alt="Ай-Петри">
                     <div class="gallery__card-caption">
                         <h3 class="gallery__card-title">Крым</h3>
-                        <img class="gallery__card-like" src="./images/like-button.svg" alt="нравится">
+                        <button class="gallery__card-like" type="button" aria-label="нравиться"></button>
                     </div>
                 </div>
 
@@ -46,7 +41,7 @@
                     <img class="gallery__card-image" src="./images/karelia.jpg" alt="Карелия">
                     <div class="gallery__card-caption">
                         <h3 class="gallery__card-title">Карелия</h3>
-                        <img class="gallery__card-like" src="./images/like-button.svg" alt="нравится">
+                        <button class="gallery__card-like" type="button" aria-label="нравиться"></button>
                     </div>
                 </div>
 
@@ -54,7 +49,7 @@
                     <img class="gallery__card-image" src="./images/Istra-oblast.jpg" alt="Истринская область">
                     <div class="gallery__card-caption">
                         <h3 class="gallery__card-title">Истринская область</h3>
-                        <img class="gallery__card-like" src="./images/like-button.svg" alt="нравится">
+                        <button class="gallery__card-like" type="button" aria-label="нравиться"></button>
                     </div>
                 </div>
 
@@ -62,7 +57,7 @@
                     <img class="gallery__card-image" src="./images/sochi.jpg" alt="Сочи">
                     <div class="gallery__card-caption">
                         <h3 class="gallery__card-title">Сочи</h3>
-                        <img class="gallery__card-like" src="./images/like-button.svg" alt="нравится">
+                        <button class="gallery__card-like" type="button" aria-label="нравиться"></button>
                     </div>
                 </div>
 
@@ -70,7 +65,7 @@
                     <img class="gallery__card-image" src="./images/Svetlogorsk.jpg" alt="Светлогорск">
                     <div class="gallery__card-caption">
                         <h3 class="gallery__card-title">Светлогорск</h3>
-                        <img class="gallery__card-like" src="./images/like-button.svg" alt="нравится">
+                        <button class="gallery__card-like" type="button" aria-label="нравиться"></button>
                     </div>
                 </div>
 
@@ -78,7 +73,7 @@
                     <img class="gallery__card-image" src="./images/tula-kreml.jpg" alt="Тульский Кремль">
                     <div class="gallery__card-caption">
                         <h3 class="gallery__card-title">Тула</h3>
-                        <img class="gallery__card-like" src="./images/like-button.svg" alt="нравится">
+                        <button class="gallery__card-like" type="button" aria-label="нравиться"></button>
                     </div>
                 </div>
             </section>
@@ -88,15 +83,15 @@
             <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
         </footer>
 
-        <div class="popup popup_opened">
-            <button class="popup__close-icon" type="button"></button>
+        <div class="popup">
             <div class="popup__container">
-                <form class="popup__form">
+                <button class="popup__close-icon" type="button"></button>
+                <form class="popup__form" name="profileForm">
                     <h2 class="popup__form-title">Редактировать профиль</h2>
-                    <input class="popup__form-input" type="text" prompt='Имя' value='Жак-Ив Кусто' id='name' required>
-                    <input class="popup__form-input" type="text" prompt='О себе' value='Исследователь океана'
+                    <input class="popup__form-input" type="text" name="userName" id='name' value="" required>
+                    <input class="popup__form-input" type="text" name="userOccupation" value=""
                         id='occupation' required>
-                    <button class="popup__form-submit" type="submit" id="submitbutton"></button>
+                    <button class="popup__form-submit" type="submit" id="submitbutton">Сохранить</button>
                 </form>
 
             </div>
@@ -104,3 +99,4 @@
     </div>
     <script src="./scripts/index.js"></script>
 </body>
+</html>

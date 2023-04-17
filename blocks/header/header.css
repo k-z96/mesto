@@ -4,11 +4,13 @@
     justify-content: space-evenly;
     align-items: start;
     padding-top: 45px;
-    padding-left: 15.625%;
-    padding-right: 15.625%;
+    margin-left: 15.625%;
+    margin-right: 15.625%;
+    border-bottom: rgba(255, 255, 255, 0.7) 1px solid;
+    align-self: stretch;
 }
 
-@media screen and (max-width: 1084px) {
+/*@media screen and (max-width: 1084px) {
     .header {
         padding: 45px 100px 0 100px;
     }
@@ -18,16 +20,11 @@
     .header {
         padding: 45px 50px 0 50px;
     }
-}
+}*/
 
 @media screen and (max-width: 500px) {
     .header {
-        padding: 35px 0 0 0;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .header {
-        padding: 28px 0 0 0;
+        padding: 25px 0 0 0;
+        margin: 0;
     }
 }

@@ -3,11 +3,11 @@
     height: 32px;
     position: absolute;
     left: calc(((100% - 430px) / 2) + 438px);
-    top: 155px;
-    background-image: url('../../../images/Close_Icon.png');
+    top: -40px;
+    background-image: url('../../../images/Close-Icon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-color: black;
+    background-color: rgb(0 0 0 / 0%);
     border-style: none;
 }
 
@@ -21,7 +21,8 @@
     .popup__close-icon {
         width: 20px;
         height: 20px;
-        left: calc(((100% - 282px) / 2) + 262px);
-        top: 87px;
+        background-image: url(../../../images/Close-Icon-small.svg);
+        left: 263px;
+        top: -35px;
     }
 }

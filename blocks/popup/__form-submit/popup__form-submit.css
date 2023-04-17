@@ -2,18 +2,18 @@
     height: 50px;
     background-color: #000;
     color: white;
-    background-image: url(../../../images/Submit_Button.png);
+    background-image: url(../../../images/submitRectangle-big.svg);
     background-repeat: no-repeat;
     border: none;
     /*padding: 18px 0 37px 0;
     margin-top: 18px;*/
     border-radius: 2px;
-    /*text-align: center;
+    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
     font-weight: 400;
-    line-height: 1.2;*/
+    line-height: 1.2;
 }
 
 .popup__form-submit:hover {
@@ -26,7 +26,7 @@
     .popup__form-submit {
         height: 46px;
         font-size: 14px;
-        background-image: url(../../../images/Submit_Button_small.png);
-        /*padding: 29px 0 39px 0;*/
+        background-image: url(../../../images/submitRectangle-small.svg);
+        margin-top: 15px;
     }
 }
