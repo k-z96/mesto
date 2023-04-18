@@ -7,7 +7,7 @@
     padding: 0;
     border-style: none;
     background-color: rgba(0, 0, 0, 0);
-
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 .profile__edit-button:hover {
@@ -23,10 +23,10 @@
     }
 }*/
 
-@media screen and (max-width: 320px){
-    .profile__edit-button{
+@media screen and (max-width: 320px) {
+    .profile__edit-button {
         max-width: 18px;
-        min-height: 18px;
+        height: 18px;
         background-image: url(../../../images/Edit-Button-small.svg);
         background-repeat: no-repeat;
     }

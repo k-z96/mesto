@@ -18,6 +18,7 @@
     .profile__info {
         row-gap: 14px;
         column-gap: 10px;
-        padding: 25px 0 30px 25px;
+        padding: 25px 0 30px 0;
+        max-width: 282px;
     }
 }
