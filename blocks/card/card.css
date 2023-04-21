@@ -9,7 +9,3 @@
     margin: 0;
     position: relative;
 }
-
-.card:hover {
-    cursor: pointer;
-}

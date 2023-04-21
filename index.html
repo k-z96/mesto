@@ -38,13 +38,13 @@
 
         <div class="popup popup_form-edit">
             <div class="popup__container">
-                <button class="popup__close-icon popup__form-close" type="button" aria-label="закрыть"></button>
-                <form class="popup__form popup__add-info-form" name="profileForm">
+                <button class="popup__close-icon popup__close-icon_profile" type="button" aria-label="закрыть"></button>
+                <form class="popup__form popup__form_profile" name="profileForm">
                     <h2 class="popup__form-title">Редактировать профиль</h2>
                     <input class="popup__form-input" type="text" name="userName" id='name' value="" required>
                     <input class="popup__form-input" type="text" name="userOccupation" value="" id='occupation'
                         required>
-                    <button class="popup__form-submit popup__info-submit" type="submit" id="submitbutton"
+                    <button class="popup__form-submit popup__form-submit_profile" type="submit" id="submitbutton"
                         aria-label="сохранить">Сохранить</button>
                 </form>
 
@@ -53,15 +53,15 @@
 
         <div class="popup popup_card-add">
             <div class="popup__container">
-                <button class="popup__close-icon popup__card-close" type="button" aria-label="закрыть"></button>
-                <form class="popup__form popup__add-card-form" name="cardAdd" id="cardAdd">
+                <button class="popup__close-icon popup__close-icon_card" type="button" aria-label="закрыть"></button>
+                <form class="popup__form popup__form_add-card" name="cardAdd" id="cardAdd">
                     <h2 class="popup__form-title">Новое место</h2>
                     <input class="popup__form-input" type="text" name="placeName" id='cardName' placeholder="Название"
                         required>
                     <input class="popup__form-input" type="url" name="placeLink" placeholder="Ссылка на картинку"
                         id='cardLink' required>
-                    <button class="popup__form-submit popup__card-submit" type="submit"
-                        aria-label="сохранить">Сохранить</button>
+                    <button class="popup__form-submit popup__form-submit_card" type="submit"
+                        aria-label="создать">Создать</button>
                 </form>
 
             </div>
@@ -69,8 +69,8 @@
     </div>
 
     <div class="popup popup_zoom">
-        <div class="popup__zoom-container">
-            <button class="popup__zoom-close" type="button" aria-label="закрыть"></button>
+        <div class="popup__container_zoom">
+            <button class="popup__close-icon popup__close-icon_zoom" type="button" aria-label="закрыть"></button>
             <img class="popup__zoom-image">
             <p class="popup__zoom-caption"></p>
         </div>

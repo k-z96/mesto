@@ -1,0 +1,11 @@
+.popup__close-icon_zoom {
+    top: -40px;
+    right: -40px;
+}
+
+@media screen and (max-width:550px) {
+    .popup__close-icon_zoom {
+        right: 0;
+        top: -35px;
+    }
+}
