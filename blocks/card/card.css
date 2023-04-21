@@ -1,4 +1,4 @@
-.gallery__card {
+.card {
     max-width: 282px;
     /*height: 361px;*/
     background-color: #fff;
@@ -7,4 +7,9 @@
     flex-direction: column;
     justify-content: start;
     margin: 0;
+    position: relative;
+}
+
+.card:hover{
+    cursor: pointer;
 }

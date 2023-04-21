@@ -1,4 +1,4 @@
-.gallery__card-like {
+.card__like {
     width: 22px;
     height: 19px;
     padding-top: 5px;
@@ -9,7 +9,7 @@
     align-self: center;
 }
 
-.gallery__card-like:hover {
+.card__like:hover {
     opacity: 0.5;
     transition: 0.5s;
     cursor: pointer;

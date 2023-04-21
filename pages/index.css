@@ -28,11 +28,15 @@
 
 /*gallery*/
 @import url(../blocks/gallery/gallery.css);
-@import url(../blocks/gallery/__card/gallery__card.css);
-@import url(../blocks/gallery/__card-image/gallery__card-image.css);
-@import url(../blocks/gallery/__card-title/gallery__card-title.css);
-@import url(../blocks/gallery/__card-like/gallery__card-like.css);
-@import url(../blocks/gallery/__card-caption/gallery__card-caption.css);
+
+/*card*/
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__like/card__like.css);
+@import url(../blocks/card/__caption/card__caption.css);
+@import url(../blocks/card/__like/_active/card__like_active.css);
+@import url(../blocks/card/__delete/card__delete.css);
 
 /*footer*/
 @import url(../blocks/footer/footer.css);
@@ -47,3 +51,7 @@
 @import url(../blocks/popup/__form-input/popup__form-input.css);
 @import url(../blocks/popup/__form-submit/popup__form-submit.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/__zoom-caption/popup__zoom-caption.css);
+@import url(../blocks/popup/__zoom-close/popup__zoom-close.css);
+@import url(../blocks/popup/__zoom-container/popup__zoom-container.css);
+@import url(../blocks/popup/__zoom-image/popup__zoom-image.css);

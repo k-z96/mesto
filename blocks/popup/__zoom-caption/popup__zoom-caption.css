@@ -1,0 +1,8 @@
+.popup__zoom-caption{
+    font-weight: 400px;
+    font-size: 12px;
+    line-height: 1.25;
+    color: white;
+    margin-top: 10px;
+    align-self: start;
+}
