@@ -29,53 +29,6 @@
             </section>
 
             <section class="gallery">
-                <!--<div class="card">
-                    <img class="card__image" src="./images/Ai-petri.jpg" alt="Ай-Петри">
-                    <div class="card__caption">
-                        <h3 class="card__title">Крым</h3>
-                        <button class="card__like" type="button" aria-label="нравиться"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="card__image" src="./images/karelia.jpg" alt="Карелия">
-                    <div class="card__caption">
-                        <h3 class="card__title">Карелия</h3>
-                        <button class="card__like" type="button" aria-label="нравиться"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="card__image" src="./images/Istra-oblast.jpg" alt="Истринская область">
-                    <div class="card__caption">
-                        <h3 class="card__title">Истринская область</h3>
-                        <button class="card__like" type="button" aria-label="нравиться"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="card__image" src="./images/sochi.jpg" alt="Сочи">
-                    <div class="card__caption">
-                        <h3 class="card__title">Сочи</h3>
-                        <button class="card__like" type="button" aria-label="нравиться"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="card__image" src="./images/Svetlogorsk.jpg" alt="Светлогорск">
-                    <div class="card__caption">
-                        <h3 class="card__title">Светлогорск</h3>
-                        <button class="card__like" type="button" aria-label="нравиться"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="card__image" src="./images/tula-kreml.jpg" alt="Тульский Кремль">
-                    <div class="card__caption">
-                        <h3 class="card__title">Тула</h3>
-                        <button class="card__like" type="button" aria-label="нравиться"></button>
-                    </div>
-                </div>-->
             </section>
         </main>
 
@@ -89,9 +42,10 @@
                 <form class="popup__form popup__add-info-form" name="profileForm">
                     <h2 class="popup__form-title">Редактировать профиль</h2>
                     <input class="popup__form-input" type="text" name="userName" id='name' value="" required>
-                    <input class="popup__form-input" type="text" name="userOccupation" value=""
-                        id='occupation' required>
-                    <button class="popup__form-submit popup__info-submit" type="submit" id="submitbutton" aria-label="сохранить">Сохранить</button>
+                    <input class="popup__form-input" type="text" name="userOccupation" value="" id='occupation'
+                        required>
+                    <button class="popup__form-submit popup__info-submit" type="submit" id="submitbutton"
+                        aria-label="сохранить">Сохранить</button>
                 </form>
 
             </div>
@@ -102,10 +56,12 @@
                 <button class="popup__close-icon popup__card-close" type="button" aria-label="закрыть"></button>
                 <form class="popup__form popup__add-card-form" name="cardAdd" id="cardAdd">
                     <h2 class="popup__form-title">Новое место</h2>
-                    <input class="popup__form-input" type="text" name="placeName" id='cardName' placeholder="Название" required>
+                    <input class="popup__form-input" type="text" name="placeName" id='cardName' placeholder="Название"
+                        required>
                     <input class="popup__form-input" type="url" name="placeLink" placeholder="Ссылка на картинку"
                         id='cardLink' required>
-                    <button class="popup__form-submit popup__card-submit" type="submit" id="submitbutton" aria-label="сохранить">Сохранить</button>
+                    <button class="popup__form-submit popup__card-submit" type="submit"
+                        aria-label="сохранить">Сохранить</button>
                 </form>
 
             </div>
@@ -115,7 +71,7 @@
     <div class="popup popup_zoom">
         <div class="popup__zoom-container">
             <button class="popup__zoom-close" type="button" aria-label="закрыть"></button>
-            <img class="popup__zoom-image" src="" alt="">
+            <img class="popup__zoom-image">
             <p class="popup__zoom-caption"></p>
         </div>
     </div>
@@ -133,4 +89,5 @@
 
     <script src="./scripts/index.js"></script>
 </body>
+
 </html>
