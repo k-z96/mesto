@@ -1,11 +1,11 @@
 .popup__close-icon_zoom {
-    top: -40px;
-    right: -40px;
+    top: -35px;
+    left: 101%;
 }
 
 @media screen and (max-width:550px) {
     .popup__close-icon_zoom {
-        right: 0;
-        top: -35px;
+        top: -30px;
+        left: 92%;
     }
 }

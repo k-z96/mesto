@@ -6,4 +6,8 @@
     flex-direction: column;
     justify-self: center;
     align-self: center;
+    background: none;
+    border: none;
+    box-shadow: none;
+    width: auto;
 }
