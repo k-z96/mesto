@@ -1,23 +1,30 @@
 //addInfo popup
 const addInfoPopup = document.querySelector('.popup_form-edit');
 const popupAddInfoButton = document.querySelector('.profile__edit-button');
+const popupCloseInfoButton = addInfoPopup.querySelector('.popup__close-icon_profile');
+const addInfoForm = addInfoPopup.querySelector('.popup__form_profile');
+const nameInput = addInfoForm.querySelector('#name');
+const jobInput = addInfoForm.querySelector('#occupation');
+const profileName = document.querySelector('.profile__name');
+const profileOccupation = document.querySelector('.profile__occupation');
 
-const popupCloseInfoButton = addInfoPopup.querySelector('.popup__form-close');
+//addCard popup
+const addCardPopup = document.querySelector('.popup_card-add');
+const addCardButton = document.querySelector('.profile__add-button');
+const addCardCloseButton = addCardPopup.querySelector('.popup__close-icon_card');
+const addCardForm = addCardPopup.querySelector('.popup__form_add-card');
+const cardNameInput = addCardPopup.querySelector('#cardName');
+const cardLinkInput = addCardPopup.querySelector('#cardLink');
 
-const addInfoForm = addInfoPopup.querySelector('.popup__add-info-form');
+//ceate cards
+const cardTemplate = document.querySelector('#card-template');
+const cardGallery = document.querySelector('.gallery');
 
-let nameInput = addInfoForm.querySelector('#name');
-let jobInput = addInfoForm.querySelector('#occupation');
-
-let profileName = document.querySelector('.profile__name');
-let profileOccupation = document.querySelector('.profile__occupation');
-
-//Open Popup
+//Open/close Popup
 function popupOpen(popup) {
     popup.classList.add('popup_opened');
 }
 
-//Close Popup
 function popupClose(popup) {
     popup.classList.remove('popup_opened');
 }
@@ -37,7 +44,7 @@ popupCloseInfoButton.addEventListener('click', function () {
     popupClose(addInfoPopup);
 });
 
-function handleFormSubmit(evt) {
+function handleProfileFormSubmit(evt) {
     evt.preventDefault();
 
     profileName.textContent = nameInput.value;
@@ -46,18 +53,9 @@ function handleFormSubmit(evt) {
     popupClose(addInfoPopup);
 }
 
-addInfoPopup.addEventListener('submit', handleFormSubmit);
+addInfoPopup.addEventListener('submit', handleProfileFormSubmit);
 
-
-//addCard popup
-const addCardPopup = document.querySelector('.popup_card-add');
-const addCardButton = document.querySelector('.profile__add-button');
-const addCardCloseButton = addCardPopup.querySelector('.popup__card-close');
-
-const addCardForm = addCardPopup.querySelector('.popup__add-card-form');
-const cardNameInput = addCardPopup.querySelector('#cardName');
-const cardLinkInput = addCardPopup.querySelector('#cardLink');
-
+//Add card popup
 function openAddCardPopup(addCardPopup) {
     popupOpen(addCardPopup);
 }
@@ -81,15 +79,18 @@ function handleAddCardSubmit(evt) {
         link
     }
 
-    renderCardElement(createCardElement(cardData));
+    function addCardElement(cardElement){
+        cardGallery.prepend(cardElement);
+    }
+
+    addCardElement(createCardElement(cardData));
 
     popupClose(addCardPopup);
 }
 
 addCardPopup.addEventListener('submit', handleAddCardSubmit);
 
-
-//popup cards
+//Cards
 const initialCards = [
     {
         name: 'Озеро Баскунчак',
@@ -117,11 +118,6 @@ const initialCards = [
     }
 ];
 
-const cardTemplate = document.querySelector('#card-template');
-const cardGallery = document.querySelector('.gallery');
-
-
-
 //Create Cards
 function createCardElement(cardData) {
     const cardElement = cardTemplate.content
@@ -141,23 +137,19 @@ function createCardElement(cardData) {
     const handleLike = () => {
         cardLikeButton.classList.toggle('card__like_active');
     }
-
     const handleDelete = () => {
         cardElement.remove();
     }
 
     cardLikeButton.addEventListener('click', handleLike);
-
     cardDeleteButton.addEventListener('click', handleDelete);
 
-
     const zoomPopup = document.querySelector('.popup_zoom');
-    const zoomClose = document.querySelector('.popup__zoom-close');
+    const zoomClose = document.querySelector('.popup__close-icon_zoom');
 
     const closeZoom = () => {
         zoomPopup.classList.remove('popup_opened');
     }
-
     const openZoom = () => {
         zoomPopup.classList.toggle('popup_opened');
 
@@ -172,12 +164,11 @@ function createCardElement(cardData) {
     cardImage.addEventListener('click', openZoom);
     zoomClose.addEventListener('click', closeZoom);
 
-
     return cardElement;
 }
 
 function renderCardElement(cardElement) {
-    cardGallery.prepend(cardElement);
+    cardGallery.append(cardElement);
 }
 
 initialCards.forEach((card) => {

@@ -52,6 +52,6 @@
 @import url(../blocks/popup/__form-submit/popup__form-submit.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__zoom-caption/popup__zoom-caption.css);
-@import url(../blocks/popup/__zoom-close/popup__zoom-close.css);
-@import url(../blocks/popup/__zoom-container/popup__zoom-container.css);
+@import url(../blocks/popup/__close-icon/_zoom/popup__close-icon_zoom.css);
+@import url(../blocks/popup/__container/_zoom/popup__container_zoom.css);
 @import url(../blocks/popup/__zoom-image/popup__zoom-image.css);
