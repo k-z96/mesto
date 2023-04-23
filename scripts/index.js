@@ -37,6 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.classList.remove('popup_opened');
     }
 
+    const closeZoom = () => {
+        popupClose(zoomPopup);
+    }
+
+    zoomClose.addEventListener('click', closeZoom)
+
     //addInfo popup
     function openAddInfoPopup(addInfoPopup) {
         nameInput.value = profileName.textContent;
@@ -151,10 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
         cardLikeButton.addEventListener('click', handleLike);
         cardDeleteButton.addEventListener('click', handleDelete);
 
-        const closeZoom = () => {
-            popupClose(zoomPopup);
-        }
-
         const openZoom = () => {
             openAddCardPopup(zoomPopup);
 
@@ -164,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         cardImage.addEventListener('click', openZoom);
-        zoomClose.addEventListener('click', closeZoom);
 
         return cardElement;
     }
