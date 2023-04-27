@@ -1,0 +1,6 @@
+.popup__form-submit_disabled{
+    background-color: white;
+    color: black;
+    opacity: 0.2;
+    background-image: url(../../../../images/Rectangle-disabled.svg);
+}

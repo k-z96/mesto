@@ -55,3 +55,6 @@
 @import url(../blocks/popup/__close-icon/_zoom/popup__close-icon_zoom.css);
 @import url(../blocks/popup/__container/_zoom/popup__container_zoom.css);
 @import url(../blocks/popup/__zoom-image/popup__zoom-image.css);
+@import url(../blocks/popup/__form-submit/_disabled/popup__form-submit_disabled.css);
+@import url(../blocks/popup/__form-input/_wrong/popup__form-input_wrong.css);
+@import url(../blocks/popup/__form-input-error-message/_active/popup__form-input-error-message_active.css);
