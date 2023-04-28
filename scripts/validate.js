@@ -7,6 +7,8 @@ const validationSettings = {
     errorClass: 'popup__form-input-error-message_active'
 };
 
+console.log(validationSettings);
+
 const showInputError = (formElement, inputElement, errorMessage, validation) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error-message`);
     inputElement.classList.add(validation.inputErrorClass);

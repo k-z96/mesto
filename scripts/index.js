@@ -110,7 +110,7 @@ addCardCloseButton.addEventListener('click', function () {
     closePopup(addCardPopup);
 });
 
-function handleAddCardSubmit(evt) {
+function handleAddCardSubmit(evt, validation) {
     evt.preventDefault();
 
     const name = cardNameInput.value;
@@ -132,10 +132,12 @@ function handleAddCardSubmit(evt) {
     const inputList = Array.from(addCardPopup.querySelectorAll('.popup__form-input'));
     const buttonElement = addCardPopup.querySelector('.popup__form-submit');
 
-    toggleButtonState(inputList, buttonElement);
+    toggleButtonState(inputList, buttonElement, validation);
 }
 
-addCardPopup.addEventListener('submit', handleAddCardSubmit);
+addCardPopup.addEventListener('submit', (evt) => {
+    handleAddCardSubmit(evt, validationSettings);
+});
 
 //Create Cards
 function createCardElement(cardData) {
