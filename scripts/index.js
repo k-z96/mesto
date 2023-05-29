@@ -1,5 +1,8 @@
-const forms = document.querySelectorAll('.popup__form');
-const formsArray = Array.from(forms);
+import FormValidator from './FormValidator.js';
+import Card from './Card.js';
+import { openPopup } from './Card.js';
+import { closePopup } from './Card.js';
+import { toggleButtonState } from './FormValidator.js';
 
 //addInfo popup
 const addInfoPopup = document.querySelector('.popup_form-edit');
@@ -19,52 +22,11 @@ const addCardForm = addCardPopup.querySelector('.popup__form_add-card');
 const cardNameInput = addCardForm.querySelector('#cardName');
 const cardLinkInput = addCardForm.querySelector('#cardLink');
 
-//ceate cards
-const cardTemplate = document.querySelector('#card-template');
+// Card gallery
 const cardGallery = document.querySelector('.gallery');
 
-//zoom popup
-const zoomPopup = document.querySelector('.popup_zoom');
-const zoomClose = document.querySelector('.popup__close-icon_zoom');
-const zoomImage = document.querySelector('.popup__zoom-image');
-const zoomCaption = document.querySelector('.popup__zoom-caption');
-
-//close popup
+// Close popup
 const closeButtons = document.querySelectorAll('.popup__close-icon');
-
-//Open/close Popup
-function openPopup(popup) {
-    popup.classList.add('popup_opened');
-    document.addEventListener('keydown', handleEscClose);
-    popup.addEventListener('click', handleOutsideClick);
-}
-
-function closePopup(popup) {
-    popup.classList.remove('popup_opened');
-    document.removeEventListener('keydown', handleEscClose);
-    popup.removeEventListener('click', handleOutsideClick);
-}
-
-function handleEscClose(event) {
-    if (event.key === 'Escape') {
-        const openedPopup = document.querySelector('.popup_opened');
-        closePopup(openedPopup);
-    }
-}
-
-function handleOutsideClick(event) {
-    const popup = event.currentTarget;
-    const popupForm = popup.querySelector('.popup__form');
-    if (event.target === popup && event.target !== popupForm) {
-        closePopup(popup);
-    }
-}
-
-const closeZoom = () => {
-    closePopup(zoomPopup);
-}
-
-//zoomClose.addEventListener('click', closeZoom)
 
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
@@ -98,17 +60,13 @@ function handleProfileFormSubmit(evt) {
 addInfoPopup.addEventListener('submit', handleProfileFormSubmit);
 
 //Add card popup
-function openAddCardPopup(addCardPopup) {
+function openAddCardPopup() {
     openPopup(addCardPopup);
-}
+  }
 
-addCardButton.addEventListener('click', function () {
-    openPopup(addCardPopup);
-});
+addCardButton.addEventListener('click', openAddCardPopup);
 
-addCardCloseButton.addEventListener('click', function () {
-    closePopup(addCardPopup);
-});
+addCardCloseButton.addEventListener('click', () => closePopup(addCardPopup));
 
 function handleAddCardSubmit(evt, validation) {
     evt.preventDefault();
@@ -117,17 +75,17 @@ function handleAddCardSubmit(evt, validation) {
     const link = cardLinkInput.value;
 
     const cardData = {
-        name,
-        link
-    }
+        text : name,
+        imageLink: link
+    };
 
-    const cardElement = createCardElement(cardData);
+    const card = new Card(cardData, '#card-template');
+    const cardElement = card.generateCard();
 
     cardGallery.prepend(cardElement);
+    addCardForm.reset();
 
     closePopup(addCardPopup);
-
-    addCardForm.reset();
 
     const inputList = Array.from(addCardPopup.querySelectorAll('.popup__form-input'));
     const buttonElement = addCardPopup.querySelector('.popup__form-submit');
@@ -139,50 +97,53 @@ addCardPopup.addEventListener('submit', (evt) => {
     handleAddCardSubmit(evt, validationSettings);
 });
 
-//Create Cards
-function createCardElement(cardData) {
-    let cardElement = cardTemplate.content
-        .querySelector('.card')
-        .cloneNode(true);
-
-    const cardTitle = cardElement.querySelector('.card__title');
-    const cardImage = cardElement.querySelector('.card__image');
-
-    cardTitle.textContent = cardData.name;
-    cardImage.src = cardData.link;
-    cardImage.alt = cardData.name;
-
-    const cardLikeButton = cardElement.querySelector('.card__like-button');
-    const cardDeleteButton = cardElement.querySelector('.card__delete-button');
-
-    const handleLike = () => {
-        cardLikeButton.classList.toggle('card__like_active');
+const initialCards = [
+    {
+        text: 'Озеро Баскунчак',
+        imageLink: 'https://images.unsplash.com/photo-1606589547223-7fd442990d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80'
+    },
+    {
+        text: 'Карелия',
+        imageLink: 'https://images.unsplash.com/photo-1573156667488-5c0cec674762?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80'
+    },
+    {
+        text: 'Даргавс',
+        imageLink: 'https://images.unsplash.com/photo-1597581729358-7429e1b731bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80'
+    },
+    {
+        text: 'Териберка',
+        imageLink: 'https://images.unsplash.com/photo-1610554120720-6439d218c436?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80'
+    },
+    {
+        text: 'Светлогорск',
+        imageLink: 'https://images.unsplash.com/photo-1630735980996-bee02c321d19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80'
+    },
+    {
+        text: 'Камчатский край',
+        imageLink: 'https://images.unsplash.com/photo-1654192541419-eea56035d65d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60'
     }
-    const handleDelete = () => {
-        cardElement.remove();
-    }
+];
 
-    cardLikeButton.addEventListener('click', handleLike);
-    cardDeleteButton.addEventListener('click', handleDelete);
+const cardContainer = document.querySelector('.gallery'); 
 
-    const openZoom = () => {
-        openAddCardPopup(zoomPopup);
-
-        zoomImage.src = cardData.link;
-        zoomImage.alt = cardData.name;
-        zoomCaption.textContent = cardData.name;
-    }
-
-    cardImage.addEventListener('click', openZoom);
-
-    return cardElement;
-}
-
-function renderCardElement(cardElement) {
-    cardGallery.append(cardElement);
-}
-
-initialCards.forEach((card) => {
-    const element = createCardElement(card);
-    renderCardElement(element);
+// Create and append cards
+initialCards.forEach((data) => {
+  const card = new Card(data, '#card-template');
+  const cardElement = card.generateCard();
+  cardContainer.appendChild(cardElement);
 });
+
+const validationSettings = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__form-input',
+    submitButtonSelector: '.popup__form-submit',
+    inactiveButtonClass: 'popup__form-submit_disabled',
+    inputErrorClass: 'popup__form-input_wrong',
+    errorClass: 'popup__form-input-error-message_active',
+  };
+  
+  const addInfoValidator = new FormValidator(validationSettings, addInfoForm);
+  const addCardValidator = new FormValidator(validationSettings, addCardForm);
+  
+  addInfoValidator.enableValidation();
+  addCardValidator.enableValidation();
