@@ -1,37 +1,5 @@
-//Zoom popup
-const zoomPopup = document.querySelector('.popup_zoom');
-const zoomImage = document.querySelector('.popup__zoom-image');
-const zoomCaption = document.querySelector('.popup__zoom-caption')
-
-function handleEscClose(event) {
-    if (event.key === 'Escape') {
-        const openedPopup = document.querySelector('.popup_opened');
-        closePopup(openedPopup);
-    }
-}
-
-function handleOutsideClick(event) {
-    const popup = event.currentTarget;
-    const popupForm = popup.querySelector('.popup__form');
-    if (event.target === popup && event.target !== popupForm) {
-        closePopup(popup);
-    }
-}
-
-export function openPopup(popup) {
-    popup.classList.add('popup_opened');
-    document.addEventListener('keydown', handleEscClose);
-    popup.addEventListener('click', handleOutsideClick);
-}
-
-export function closePopup(popup) {
-    popup.classList.remove('popup_opened');
-    document.removeEventListener('keydown', handleEscClose);
-    popup.removeEventListener('click', handleOutsideClick);
-}
-
 export default class Card {
-    constructor(data, templateSelector) {
+    constructor(data, templateSelector, handleOpenPopup) {
       this._text = data.text;
       this._imageLink = data.imageLink;
       this._templateSelector = templateSelector;
@@ -40,6 +8,7 @@ export default class Card {
       this._cardTitle = this._element.querySelector('.card__title');
       this._likeButton = this._element.querySelector('.card__like-button');
       this._deleteButton = this._element.querySelector('.card__delete-button');
+      this._handleOpenPopup= handleOpenPopup;
       this._setEventListeners();
     }
   
@@ -53,26 +22,27 @@ export default class Card {
         this._likeButton.classList.toggle('card__like_active');
       }
     
-      _handleDeleteClick() {
+    _handleDeleteClick() {
         this._element.remove();
       }
 
-      _handleImageClick() {
-        openPopup(zoomPopup);
-        zoomImage.src = this._imageLink;
-        zoomImage.alt = this._text;
-        zoomCaption.textContent = this._text;
+      _handleOpenPopup(name, link){
+        this._handleOpenPopup(name, link);
       }
   
     _setEventListeners() {
-      this._imageElement.addEventListener('click', this._handleImageClick.bind(this));
       this._likeButton.addEventListener('click', this._handleLikeClick.bind(this));
       this._deleteButton.addEventListener('click', this._handleDeleteClick.bind(this));
+      this._imageElement.addEventListener('click', () =>{ 
+      this._handleOpenPopup(this._name, this._link) 
+      });  
     }
   
     generateCard() {
       this._imageElement.src = this._imageLink;
+      this._imageElement.alt = this._text;
       this._cardTitle.textContent = this._text;
       return this._element;
     }
   }
+
