@@ -44,8 +44,7 @@ function handleEscClose(event) {
 
 function handleOutsideClick(event) {
     const popup = event.currentTarget;
-    const popupForm = popup.querySelector('.popup__form');
-    if (event.target === popup && event.target !== popupForm) {
+    if (event.target === popup) {
         closePopup(popup);
     }
 }
@@ -64,6 +63,7 @@ function closePopup(popup) {
 
 //addInfo popup
 function openAddInfoPopup(addInfoPopup) {
+    addInfoValidator.resetValidation();
     nameInput.value = profileName.textContent;
     jobInput.value = profileOccupation.textContent;
     openPopup(addInfoPopup);
@@ -79,6 +79,7 @@ popupCloseInfoButton.addEventListener('click', function () {
 
 //Add card popup
 function openAddCardPopup() {
+    addCardValidator.resetValidation();
     openPopup(addCardPopup);
   }
 
@@ -155,7 +156,7 @@ const cardContainer = document.querySelector('.gallery');
 // Create and append cards
 initialCards.forEach((data) => {
   const cardElement = createCard(data);
-  cardContainer.appendChild(cardElement);
+  cardContainer.append(cardElement);
 });
 
 // Validate
@@ -168,11 +169,12 @@ const validationSettings = {
     errorClass: 'popup__form-input-error-message_active',
   };
   
-  const addInfoValidator = new FormValidator(validationSettings, addInfoForm);
-  const addCardValidator = new FormValidator(validationSettings, addCardForm);
+const addInfoValidator = new FormValidator(validationSettings, addInfoForm);
+const addCardValidator = new FormValidator(validationSettings, addCardForm);
   
 addInfoValidator.enableValidation();
 addCardValidator.enableValidation();
+
 
   //zoomPopup
   function handleOpenPopup(name, link) {

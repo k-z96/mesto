@@ -25,10 +25,6 @@ export default class Card {
     _handleDeleteClick() {
         this._element.remove();
       }
-
-      _handleOpenPopup(name, link){
-        this._handleOpenPopup(name, link);
-      }
   
     _setEventListeners() {
       this._likeButton.addEventListener('click', this._handleLikeClick.bind(this));
