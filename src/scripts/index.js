@@ -1,5 +1,6 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
+import Section from './Section.js';
 
 //addInfo popup
 const addInfoPopup = document.querySelector('.popup_form-edit');
@@ -26,9 +27,28 @@ const zoomCaption = document.querySelector('.popup__zoom-caption')
 
 // Card gallery
 const cardGallery = document.querySelector('.gallery');
+const templateSelector = document.querySelector('#card-template');
 
 // Close popup
 const closeButtons = document.querySelectorAll('.popup__close-icon');
+
+function renderCard(cardData){
+    const cardElement = createCard(cardData);
+    section.addItem(cardElement); 
+}
+
+function createCard(cardData){
+    const card = new Card(cardData, templateSelector, handleOpenPopup);
+    const cardElement = card.generateCard();
+    return cardElement;
+}
+
+const section = new Section({
+    items: initialCards,
+        renderer: renderCard
+    }, '#cards'
+);
+section.renderItems();
 
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
@@ -116,11 +136,11 @@ function handleAddCardSubmit(evt) {
     closePopup(addCardPopup);
 }
 
-function createCard(cardData){
-    const card = new Card(cardData, '#card-template', handleOpenPopup);
-    const cardElement = card.generateCard();
-    return cardElement;
-}
+// function createCard(cardData){
+//     const card = new Card(cardData, '#card-template', handleOpenPopup);
+//     const cardElement = card.generateCard();
+//     return cardElement;
+// }
 
 addCardForm.addEventListener('submit', handleAddCardSubmit);
 
@@ -154,10 +174,10 @@ const initialCards = [
 const cardContainer = document.querySelector('.gallery'); 
 
 // Create and append cards
-initialCards.forEach((data) => {
-  const cardElement = createCard(data);
-  cardContainer.append(cardElement);
-});
+// initialCards.forEach((data) => {
+//   const cardElement = createCard(data);
+//   cardContainer.append(cardElement);
+// });
 
 // Validate
 const validationSettings = {
