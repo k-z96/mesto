@@ -1,35 +1,21 @@
-import Card from "./Card";
-
 export default class Section {
-    constructor({items, renderer}, selector){
-        this._items = items;
+    constructor({items, renderer}, selector) {
+        this._renderedItems = items;
         this._renderer = renderer;
-        this._container = selector;
+
+        this._container = document.querySelector(selector);
     }
+
     renderItems(){
-     this._items.forEach((item) => 
-        this._renderer(item)
-     )};
-
-    addItem(itemHtml){
-        this._container.prepend(itemHtml);
-     }
+        this._renderedItems.forEach(item => 
+            this._renderer(item));
     }
 
-// function renderCard(cardData){
-//     const cardElement = createCard(cardData);
-//     section.addItem(cardElement); 
-// }
+    addNewItem(item) {
+        this._container.prepend(item);
+    }
 
-// function createCard(cardData){
-//     const card = new Card(cardData, '#card-template', handleOpenPopup);
-//     const cardElement = card.generateCard();
-//     return cardElement;
-// }
-
-// const section = new Section({
-//     items: initialCards,
-//         renderer: renderCard
-//     }, '#cards'
-// );
-// section.renderItems();
+    addItem(item){
+        this._container.append(item);
+    }
+}
