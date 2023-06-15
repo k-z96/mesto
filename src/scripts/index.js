@@ -1,40 +1,33 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
 import Section from './Section.js';
-
-//addInfo popup
-const addInfoPopup = document.querySelector('.popup_form-edit');
-const popupAddInfoButton = document.querySelector('.profile__edit-button');
-const popupCloseInfoButton = addInfoPopup.querySelector('.popup__close-icon_profile');
-const addInfoForm = addInfoPopup.querySelector('.popup__form_profile');
-const nameInput = addInfoForm.querySelector('#name');
-const jobInput = addInfoForm.querySelector('#occupation');
-const profileName = document.querySelector('.profile__name');
-const profileOccupation = document.querySelector('.profile__occupation');
-
-//addCard popup
-const addCardPopup = document.querySelector('.popup_card-add');
-const addCardButton = document.querySelector('.profile__add-button');
-const addCardCloseButton = addCardPopup.querySelector('.popup__close-icon_card');
-const addCardForm = addCardPopup.querySelector('.popup__form_add-card');
-const cardNameInput = addCardForm.querySelector('#cardName');
-const cardLinkInput = addCardForm.querySelector('#cardLink');
-
-//Zoom popup
-const zoomPopup = document.querySelector('.popup_zoom');
-const zoomImage = document.querySelector('.popup__zoom-image');
-const zoomCaption = document.querySelector('.popup__zoom-caption')
-
-// Card gallery
-const cardGallery = document.querySelector('.gallery');
-const templateSelector = document.querySelector('#card-template');
-
-// Close popup
-const closeButtons = document.querySelectorAll('.popup__close-icon');
+import {addInfoPopup,
+    popupAddInfoButton,
+    popupCloseInfoButton,
+    addInfoForm,
+    nameInput,
+    jobInput,
+    profileName,
+    profileOccupation,
+    addCardPopup,
+    addCardButton,
+    addCardForm,
+    cardNameInput,
+    cardLinkInput,
+    zoomPopup,
+    zoomImage,
+    zoomCaption,
+    cardGallery,
+    templateSelector,
+    closeButtons,
+    initialCards,
+    cardContainer,
+    addCardCloseButton
+} from '../utils/constants.js';
 
 function renderCard(cardData){
     const cardElement = createCard(cardData);
-    section.addItem(cardElement); 
+    section.addNewItem(cardElement); 
 }
 
 function createCard(cardData){
@@ -46,8 +39,8 @@ function createCard(cardData){
 const section = new Section({
     items: initialCards,
         renderer: renderCard
-    }, '#cards'
-);
+    , selector: cardContainer
+});
 section.renderItems();
 
 closeButtons.forEach((button) => {
@@ -136,48 +129,7 @@ function handleAddCardSubmit(evt) {
     closePopup(addCardPopup);
 }
 
-// function createCard(cardData){
-//     const card = new Card(cardData, '#card-template', handleOpenPopup);
-//     const cardElement = card.generateCard();
-//     return cardElement;
-// }
-
 addCardForm.addEventListener('submit', handleAddCardSubmit);
-
-const initialCards = [
-    {
-        text: 'Озеро Баскунчак',
-        imageLink: 'https://images.unsplash.com/photo-1606589547223-7fd442990d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80'
-    },
-    {
-        text: 'Карелия',
-        imageLink: 'https://images.unsplash.com/photo-1573156667488-5c0cec674762?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80'
-    },
-    {
-        text: 'Даргавс',
-        imageLink: 'https://images.unsplash.com/photo-1597581729358-7429e1b731bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80'
-    },
-    {
-        text: 'Териберка',
-        imageLink: 'https://images.unsplash.com/photo-1610554120720-6439d218c436?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80'
-    },
-    {
-        text: 'Светлогорск',
-        imageLink: 'https://images.unsplash.com/photo-1630735980996-bee02c321d19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80'
-    },
-    {
-        text: 'Камчатский край',
-        imageLink: 'https://images.unsplash.com/photo-1654192541419-eea56035d65d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60'
-    }
-];
-
-const cardContainer = document.querySelector('.gallery'); 
-
-// Create and append cards
-// initialCards.forEach((data) => {
-//   const cardElement = createCard(data);
-//   cardContainer.append(cardElement);
-// });
 
 // Validate
 const validationSettings = {

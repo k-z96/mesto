@@ -1,3 +1,5 @@
+export const cardContainer = document.querySelector('.gallery');
+
 //addInfo popup
 export const addInfoPopup = document.querySelector('.popup_form-edit');
 export const popupAddInfoButton = document.querySelector('.profile__edit-button');
@@ -57,4 +59,4 @@ export const initialCards = [
 //Container
 export const templateSelector = '#card-template';
 
-export const cardContainer = document.querySelector('.gallery'); 
+ 
