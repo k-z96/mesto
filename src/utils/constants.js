@@ -18,7 +18,8 @@ export const addCardForm = addCardPopup.querySelector('.popup__form_add-card');
 export const cardNameInput = addCardForm.querySelector('#cardName');
 export const cardLinkInput = addCardForm.querySelector('#cardLink');
 
-export const zoomPopup = document.querySelector('.popup_zoom');
+//Zoom popup
+export const zoomPopup = '.popup_zoom';
 export const zoomImage = document.querySelector('.popup__zoom-image');
 export const zoomCaption = document.querySelector('.popup__zoom-caption');
 

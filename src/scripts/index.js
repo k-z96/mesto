@@ -1,6 +1,9 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
 import Section from './Section.js';
+import Popup from './Popup.js';
+import PopupWithImage from './PopupWithImage.js';
+//import Popup from './Popup.js';
 import {addInfoPopup,
     popupAddInfoButton,
     popupCloseInfoButton,
@@ -31,7 +34,14 @@ function renderCard(cardData){
 }
 
 function createCard(cardData){
-    const card = new Card(cardData, templateSelector, handleOpenPopup);
+    const card = new Card({
+        cardData: cardData, 
+        templateSelector: templateSelector, 
+        handleOpenPopup: (name, link) =>{
+            const popupImage = new PopupWithImage(zoomPopup);
+            popupImage.open(name, link)
+        }     
+    });
     const cardElement = card.generateCard();
     return cardElement;
 }
@@ -61,6 +71,14 @@ function handleOutsideClick(event) {
         closePopup(popup);
     }
 }
+
+//   //zoomPopup
+//   function handleOpenPopup(name, link) {
+//     openPopup(zoomPopup);
+//     zoomImage.src = this._imageLink;
+//     zoomImage.alt = this._text;
+//     zoomCaption.textContent = this._text;
+//   }   
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
@@ -148,10 +166,10 @@ addInfoValidator.enableValidation();
 addCardValidator.enableValidation();
 
 
-  //zoomPopup
-  function handleOpenPopup(name, link) {
-    openPopup(zoomPopup);
-    zoomImage.src = this._imageLink;
-    zoomImage.alt = this._text;
-    zoomCaption.textContent = this._text;
-  }   
+//   //zoomPopup
+//   function handleOpenPopup(name, link) {
+//     openPopup(zoomPopup);
+//     zoomImage.src = this._imageLink;
+//     zoomImage.alt = this._text;
+//     zoomCaption.textContent = this._text;
+//   }   
