@@ -1,22 +1,23 @@
 export const cardContainer = document.querySelector('.gallery');
 
 //addInfo popup
-export const addInfoPopup = document.querySelector('.popup_form-edit');
+export const addInfoPopup = '.popup_form-edit';
 export const popupAddInfoButton = document.querySelector('.profile__edit-button');
-export const popupCloseInfoButton = addInfoPopup.querySelector('.popup__close-icon_profile');
-export const addInfoForm = addInfoPopup.querySelector('.popup__form_profile');
-export const nameInput = addInfoForm.querySelector('#name');
-export const jobInput = addInfoForm.querySelector('#occupation');
-export const profileName = document.querySelector('.profile__name');
-export const profileOccupation = document.querySelector('.profile__occupation');
+export const popupCloseInfoButton = document.querySelector('.popup__close-icon_profile');
+export const addInfoForm = document.querySelector('.popup__form_profile');
+export const nameInput = document.querySelector('.profile__name');
+export const jobInput = document.querySelector('.profile__occupation');
+export const profileNameSelector = '.profile__name';
+export const profileOccupationSelector = '.profile__occupation';
+export const profileAvatarImageSelector = '.profile__avatar';
 
 //addCard popup
-export const addCardPopup = document.querySelector('.popup_card-add');
+export const addCardPopup = '.popup_card-add';
 export const addCardButton = document.querySelector('.profile__add-button');
-export const addCardCloseButton = addCardPopup.querySelector('.popup__close-icon_card');
-export const addCardForm = addCardPopup.querySelector('.popup__form_add-card');
-export const cardNameInput = addCardForm.querySelector('#cardName');
-export const cardLinkInput = addCardForm.querySelector('#cardLink');
+export const addCardCloseButton = document.querySelector('.popup__close-icon_card');
+export const addCardForm = document.querySelector('.popup__form_add-card');
+export const cardNameInput = document.querySelector('#cardName');
+export const cardLinkInput = document.querySelector('#cardLink');
 
 //Zoom popup
 export const zoomPopup = '.popup_zoom';

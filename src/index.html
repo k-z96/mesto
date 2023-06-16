@@ -41,9 +41,9 @@
                 <button class="popup__close-icon popup__close-icon_profile" type="button" aria-label="закрыть"></button>
                 <form class="popup__form popup__form_profile" name="profileForm" novalidate>
                     <h2 class="popup__form-title">Редактировать профиль</h2>
-                    <input class="popup__form-input" type="text" id="name" required minlength="2" maxlength="40">
+                    <input class="popup__form-input" type="text" id="name" placeholder="Имя" required minlength="2" maxlength="40" >
                         <span class="popup__form-input-error-message name-error-message"></span>
-                    <input class="popup__form-input" type="text" id="occupation" required minlength="2" maxlength="200">
+                    <input class="popup__form-input" type="text" id="occupation" placeholder="О себе" required minlength="2" maxlength="200" >
                         <span class="popup__form-input-error-message occupation-error-message"></span>
                     <button class="popup__form-submit popup__form-submit_profile" type="submit" id="submitbutton"
                         aria-label="сохранить">Сохранить</button>
@@ -91,8 +91,10 @@
     <script src="./utils/constants.js" type="module"></script>
     <script src="./scripts/Popup.js" type="module"></script>
     <script src="./scripts/PopupWithImage.js" type="module"></script>
+    <script src="./scripts/PopupWithForm.js" type="module"></script>
     <script src="./scripts/Card.js" type="module"></script>
     <script src="./scripts/Section.js" type="module"></script>
+    <script src="./scripts/UserInfo.js" type="module"></script>
     <script src="./scripts/index.js" type="module"></script>
 </body>
 
