@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
-    <link rel="stylesheet" href="./pages/index.css">
+    <!-- <link rel="stylesheet" href="./pages/index.css"> -->
     <meta name="description" content="Проект Место">
     <meta name="keywords" content="Россия Путешествия Место">
     <meta name="author" content="Екатерина Зиброва">
@@ -14,12 +14,12 @@
 <body class="root">
     <div class="page">
         <header class="header">
-            <img class="header__logo" src="./images/logo.svg" alt="лого место">
+            <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="лого место">
         </header>
 
         <main class="main">
             <section class="profile">
-                <img class="profile__avatar" src="./images/image-man.jpg" alt="Аватар пользователя">
+                <img class="profile__avatar" src="<%=require('./images/image-man.jpg')%>" alt="Аватар пользователя">
                 <div class="profile__info">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
                     <button class="profile__edit-button" type="button" aria-label="изменить профиль"></button>
@@ -56,10 +56,10 @@
                 <button class="popup__close-icon popup__close-icon_card" type="button" aria-label="закрыть"></button>
                 <form class="popup__form popup__form_add-card" name="cardAdd" id="cardAdd" novalidate>
                     <h2 class="popup__form-title">Новое место</h2>
-                    <input class="popup__form-input" type="text" id="cardName" placeholder="Название" required minlength="2" maxlength="30" name="name">
+                    <input class="popup__form-input" type="text" id="cardName" placeholder="Название" required minlength="2" maxlength="30" name="cardName">
                         <span class="popup__form-input-error-message cardName-error-message"></span>
                     <input class="popup__form-input" type="url" placeholder="Ссылка на картинку"
-                        id="cardLink" name="link" required>
+                        id="cardLink" name="imageLink" required>
                         <span class="popup__form-input-error-message cardLink-error-message"></span>
                     <button class="popup__form-submit popup__form-submit_card" type="submit"
                         aria-label="создать">Создать</button>
@@ -87,7 +87,7 @@
         </div>
     </template>
 
-    <script src="./scripts/FormValidator.js" type="module"></script>
+    <!-- <script src="./scripts/FormValidator.js" type="module"></script>
     <script src="./utils/constants.js" type="module"></script>
     <script src="./scripts/Popup.js" type="module"></script>
     <script src="./scripts/PopupWithImage.js" type="module"></script>
@@ -95,7 +95,7 @@
     <script src="./scripts/Card.js" type="module"></script>
     <script src="./scripts/Section.js" type="module"></script>
     <script src="./scripts/UserInfo.js" type="module"></script>
-    <script src="./scripts/index.js" type="module"></script>
+    <script src="./index.js" type="module"></script> -->
 </body>
 
 </html>

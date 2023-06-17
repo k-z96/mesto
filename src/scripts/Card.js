@@ -26,7 +26,6 @@ export default class Card {
       this._imageElement.alt = this._text;
       this._cardTitle.textContent = this._text;
 
-      this._setEventListeners();
       return this._element;
     }
 
