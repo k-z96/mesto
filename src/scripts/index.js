@@ -45,18 +45,19 @@ const validationSettings = {
   };
 
 //Add initial cards when page loads
-function renderCard(cardData){
-    const cardElement = createCard(cardData);
+function renderCard(formData){
+    const cardElement = createCard(formData);
     section.addItem(cardElement); 
 }
 
-function createCard(cardData){
+function createCard(formData){
     const card = new Card({
-        cardData: cardData, 
+        cardData: formData, 
         templateSelector: templateSelector, 
-        handleOpenPopup: (name, link) =>{
+        handleOpenPopup: (cardName, imageLink) =>{
             const popupImage = new PopupWithImage(zoomPopup);
-            popupImage.open(name, link);
+            popupImage.open(cardName, imageLink);
+            popupImage.setEventListeners();
         }     
     });
     const cardElement = card.generateCard();
@@ -88,6 +89,7 @@ const addInfoValidator = new FormValidator(validationSettings, addInfoForm);
 addInfoValidator.enableValidation();
 
 popupAddInfoButton.addEventListener('click', () => {
+    addInfoValidator.resetValidation();
     const userData = userInfo.getUserInfo();
     popupProfileNameElement.value = userData.userName;
     popupProfileOccupationElement.value = userData.userOccupation;
@@ -97,8 +99,8 @@ popupAddInfoButton.addEventListener('click', () => {
 //create new Card Popup
 const cardPopup = new PopupWithForm(addCardPopup, (formData)=>{
     const cardElement = createCard({
-        name: formData.name, 
-        link: formData.link
+        cardName: formData.cardName, 
+        imageLink: formData.imageLink
     });
     section.addNewItem(cardElement);
     cardPopup.close();
@@ -122,7 +124,7 @@ addCardButton.addEventListener('click', () => {
 // function handleEscClose(event) {
 //     if (event.key === 'Escape') {
 //         const openedPopup = document.querySelector('.popup_opened');
-//         closePopup(openedPopup);
+//         closePopup(openedPopucarp);
 //     }
 // }
 
