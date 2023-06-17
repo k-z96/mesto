@@ -62,5 +62,3 @@ export const initialCards = [
 
 //Container
 export const templateSelector = '#card-template';
-
- 

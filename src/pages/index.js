@@ -1,11 +1,11 @@
-import './pages/index.css';
+import './index.css';
 
-import FormValidator from './scripts/FormValidator.js';
-import Card from './scripts/Card.js';
-import Section from './scripts/Section.js';
-import PopupWithImage from './scripts/PopupWithImage.js';
-import PopupWithForm from './scripts/PopupWithForm.js';
-import UserInfo from './scripts/UserInfo.js';
+import FormValidator from '../components/FormValidator.js';
+import Card from '../components/Card.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
 
 import {addInfoPopup,
     popupAddInfoButton,
@@ -19,10 +19,11 @@ import {addInfoPopup,
     templateSelector,
     initialCards,
     cardContainer,
-} from './utils/constants.js';
+} from '../utils/constants.js';
 
 const popupProfileNameElement = document.querySelector(profileNameSelector);
 const popupProfileOccupationElement = document.querySelector(profileOccupationSelector);
+
 
 // Validate
 const validationSettings = {
@@ -35,6 +36,9 @@ const validationSettings = {
   };
 
 //Add initial cards when page loads
+const popupImage = new PopupWithImage(zoomPopup);
+popupImage.setEventListeners();
+
 function renderCard(formData){
     const cardElement = createCard(formData);
     section.addItem(cardElement); 
@@ -45,9 +49,7 @@ function createCard(formData){
         cardData: formData, 
         templateSelector: templateSelector, 
         handleOpenPopup: (cardName, imageLink) =>{
-            const popupImage = new PopupWithImage(zoomPopup);
             popupImage.open(cardName, imageLink);
-            popupImage.setEventListeners();
         }     
     });
     const cardElement = card.generateCard();

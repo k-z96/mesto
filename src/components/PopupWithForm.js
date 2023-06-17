@@ -26,18 +26,8 @@ export default class PopupWithForm extends Popup {
         });
     }
 
-    // setInputValues(data){
-    //     this._popupInput.forEach((input) => {
-    //         input.value = data[input.name];
-    //     });
-    // }
-
-    open(){
-        super.openPopup();
-    }
-
     close(){
-        super.closePopup();
+        super.close();
         this._popupForm.reset();
     }
 }
