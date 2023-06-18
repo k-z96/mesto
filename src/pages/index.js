@@ -87,7 +87,6 @@ popupAddInfoButton.addEventListener('click', () => {
     const userData = userInfo.getUserInfo();
     popupProfileNameElement.value = userData.userName;
     popupProfileOccupationElement.value = userData.userOccupation;
-    console.log(userData);
     infoPopup.open();
 })
 
