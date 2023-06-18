@@ -19,10 +19,12 @@ import {addInfoPopup,
     templateSelector,
     initialCards,
     cardContainer,
+    popupNameInput,
+    popupJobInput
 } from '../utils/constants.js';
 
-const popupProfileNameElement = document.querySelector(profileNameSelector);
-const popupProfileOccupationElement = document.querySelector(profileOccupationSelector);
+const popupProfileNameElement = document.querySelector(popupNameInput);
+const popupProfileOccupationElement = document.querySelector(popupJobInput);
 
 
 // Validate
@@ -85,6 +87,7 @@ popupAddInfoButton.addEventListener('click', () => {
     const userData = userInfo.getUserInfo();
     popupProfileNameElement.value = userData.userName;
     popupProfileOccupationElement.value = userData.userOccupation;
+    console.log(userData);
     infoPopup.open();
 })
 
